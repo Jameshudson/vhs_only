@@ -2,16 +2,21 @@ package controller
 
 import(
 	"github.com/gin-gonic/gin"
+	"github.com/jameshudson/vhs_only/repositories"
 )
 
-func Index(c *gin.Context) {
+type FilmContoller struct {
+	FilmsRepositories *repositories.FilmRepositories
+}
+
+func (fc *FilmContoller) Index(c *gin.Context) {
 
 	c.JSON(200, gin.H{
 		"films": "hello",
 	})
 }
 
-func Get(c *gin.Context) {
+func (fc *FilmContoller) Get(c *gin.Context) {
 
 	
 }
